@@ -1,0 +1,19 @@
+:root{
+
+}
+
+#hdm{
+    background: var(--tertiary-color);
+}
+#hdm:hover{
+    background-color: var(--secondary-hover-color);
+}
+
+.card {
+    background-color: var(--tertiary-color);
+}
+
+
+.my-works .card {
+    background-color: var(--primary-color-transparent);
+}
