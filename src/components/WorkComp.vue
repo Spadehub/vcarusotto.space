@@ -18,7 +18,7 @@
 
       <div class="platforms">
         <BadgeComp  v-for="platform in localWork.platforms" :key="localWork.platforms.indexOf(platform)"
-                    :text="platform" text_color="black" bg_color="var(--darker-white)"/>
+                    :text="platform" text_color="var(--text-color)" bg_color="var(--primary-color)"/>
       </div>
       <div id="repo">
         <a :href="work['web_url']" class="card">
@@ -34,7 +34,7 @@
         <span class="title smaller-title">Made With:</span>
         <div class="entries">
           <BadgeComp  v-for="madeWith in localWork.madeWith" :key="localWork.madeWith.indexOf(madeWith)"
-                      :text="madeWith" text_color="black" bg_color="var(--darker-white)"/>
+                      :text="madeWith" text_color="var(--text-color)" bg_color="var(--primary-color)"/>
         </div>
       </div>
       <div class="description">
@@ -65,20 +65,18 @@ export default {
     BadgeComp,
     LoadingAnim
   },
-  setup(){
-
-  },
   data(){
     return{
       workID: Number(useRoute().params.work_id),
       work: {},
       localWork: MyWorksUtils.getLocalProjectInfoByID(Number(useRoute().params.work_id)),
-      getAvatar: MyWorksUtils.getAvatar
+      getAvatar: MyWorksUtils.getAvatar,
     }
   },
   async mounted() {
     await APIServices.fetchProjectByID(this.workID).then(response => {
       this.work = response.data
+      console.log(this.isDarkMode)
     }).catch((error) => {
       console.log(error)
       //TODO: display error correctly
@@ -120,7 +118,7 @@ export default {
   font-size: 80%;
 }
 #projectID {
-  color: gray;
+  color: var(--text-color-secondary);
   font-size: 70%;
   margin-left: 10px;
 }
@@ -142,7 +140,7 @@ export default {
 }
 .creators-comment span:not(.title) {
   font-size: 80%;
-  color: gray;
+  color: var(--text-color-secondary);
   font-style: italic
 }
 .smaller-title {

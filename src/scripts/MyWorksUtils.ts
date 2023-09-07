@@ -20,7 +20,7 @@ export default {
             platforms: ['Android'],
             madeWith: ['Android Studio (Java)'],
             isWIP: false,
-            creatorsComment: "This was my first attempt at creating a Mobile App and the first time working with Android Studio. I didn't have much trouble since it's based on Jetbrains' IDEs and I've had already worked with IntelliJ and WebStorm before. It's nothing more than what Google is able to do, but hey it works as intended."
+            creatorsComment: "This was my first attempt at creating a Mobile App and the first time working with Android Studio. I didn't have much trouble since it's based on Jetbrains' IDEs and I've had already worked with IntelliJ and WebStorm before. It's nothing more than what Google is able to do, but hey, it works as intended."
         },
         {
             id: 8596,

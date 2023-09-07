@@ -83,7 +83,7 @@
       </div>
       <div class="fixed-right">
         <div class="card languages">
-          <span id="title">Languages Known</span>
+          <span id="title">Languages</span>
           <div class="spoken-languages">
             <div class="entry">
               <img src="../assets/ita-flag.png">
@@ -103,7 +103,7 @@
               <span class="entry">Java</span>
               <span class="entry">HTML</span>
               <span class="entry">CSS</span>
-              <span class="entry">JavaScript</span>
+              <span class="entry">JS/TS</span>
               <span class="entry">Swift</span>
               <span class="entry">Python</span>
               <span class="entry">C&#x23;</span>
@@ -310,7 +310,7 @@ export default {
   margin-bottom: 10px;
 }
 .languages .entry{
-  background: white;
+  background: var(--secondary-hover-color);
 }
 .languages .entry img{
   border-radius: 40%;

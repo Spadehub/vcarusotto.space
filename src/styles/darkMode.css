@@ -1,36 +1,16 @@
-:root{
+[dark-mode="true"]{
+    --text-color: white;
+    --text-color-secondary: #bdccdb;
     --primary-color: rgb(45,60,75);
     --primary-color-transparent: rgba(45,60,75,.9);
     --secondary-hover-color: rgb(75,80,95);
     --secondary-hover-color-transparent: rgb(75,80,95,.9);
-    --tertiary-color: rgba(240,240,240,1);
+    --tertiary-color: gray;
     --background-color : rgb(25,39,52);
+    --navbar-shadow: black;
+    --highlight-color: pink;
 }
-html{
-    background-color: var(--background-color);
-}
-html span {
-    color: white
-}
-.languages .entry{
-    background: black !important;
-}
-.navbar{
-    box-shadow: 0 0 100px 30px black !important;
-}
-.latest-project {
-    box-shadow: 0 0 100px 5px black !important;
-}
-.about-me-short {
-    box-shadow: 0 0 100px 5px black !important;
-}
-.card {
-    background-color: var(--primary-color);
-}
-a:hover {
-    background-color: var(--secondary-hover-color);
-}
-.card:hover .find-out > span:is(#more){
-    color: deeppink;
-    transition: color 1s;
+/*Dark Mode transition*/
+span, .languages .entry, .navbar, .latest-project, #app .card:not(.transparent){
+    transition: background-color .8s;
 }

@@ -5,7 +5,7 @@
       <LoadingAnim/>
     </div>
     <div v-else class="entry" v-for="work in works" :key="works.indexOf(work)">
-      <router-link :to="'/work/' + work.id" class="card"
+      <router-link :to="'/work/' + work.id" class="card transparent"
                    :class="isEven(works.indexOf(work)) ?  'left' : 'right'">
         <div class="text">
           <div id="title">
@@ -107,15 +107,15 @@ export default {
 #logo{
   border-radius: 25%;
 }
-.card {
+.entry .card:is(.transparent){
   background-color: var(--primary-color-transparent);
 }
-.card:hover {
+.entry .card:is(.transparent):hover{
   background-color: var(--secondary-hover-color-transparent);
   padding-inline: 30px;
 }
-.card, .card:hover {
-  transition: padding-right .5s, padding-left .5s;
+.entry .card:is(.transparent), .entry .card:is(.transparent):hover {
+  transition: padding-right .5s, padding-left .5s, background-color .8s;
 }
 .card #logo{
   height: 30pt;

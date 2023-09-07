@@ -1,27 +1,27 @@
 <template>
   <section class="navbar">
-    <a id="admin-setting" href="../">
-      <img src="../assets/logo.png" alt="logo">
-    </a>
+    <img src="../assets/logo.png" alt="logo" id="logo">
     <div class="link-container">
       <router-link to="/home" class="home">Home</router-link>
       <router-link to="/me" class="me">About me</router-link>
       <router-link to="/works" class="works">My Works</router-link>
     </div>
-    <label for="checkbox" class="darkmode-toggle-label" @click="toggleMode()">
-      <span v-if="darkMode">🌙</span>
-      <span v-if="!darkMode">☀️</span>
-    </label>
+    <DarkmodeSwitcher :is-dark-mode="isDarkMode" @click="toggleMode()" id="darkmode-toggle-navbar"/>
   </section>
 </template>
 
 <script>
+import DarkmodeSwitcher from "@/components/miniComponents/DarkmodeSwitcher";
 export default {
   name: "NavBar",
-  props: ['darkMode'],
+  components: {DarkmodeSwitcher},
+  props: {
+    isDarkMode: Boolean
+  },
   methods:{
     toggleMode(){
       this.$emit('toggle-darkmode');
+      console.log("toggled to " + this.isDarkMode)
     }
   }
 }
@@ -42,7 +42,7 @@ export default {
     right: 2vw;
     z-index: 200;
     border-radius: 20px;
-    box-shadow: 0 0 100px 30px gray;
+    box-shadow: 0 0 100px 30px var(--navbar-shadow);
     font-family: Silom, sans-serif;
     transition: background-position 1s;
   }
@@ -75,7 +75,7 @@ export default {
   .navbar a:not(.navbarActiveClass){
     color: white;
   }
-  .navbar a:hover:not(.navbarActiveClass, #vue, #admin-setting){
+  .navbar a:hover:not(.navbarActiveClass){
     background-color: rgba(150,150,150, 50%);
     padding-block: 20px;
     flex-grow: .05;
@@ -83,7 +83,7 @@ export default {
   .navbar a, .navbar a:hover:not(.navbarActiveClass) {
     transition: .3s;
   }
-  #admin-setting, #vue {
+  #logo, #darkmode-toggle-navbar{
     height: 50px;
     width: 50px;
     position: fixed;
@@ -91,26 +91,22 @@ export default {
     opacity: 0;
     visibility: hidden;
   }
-  #admin-setting img, #vue img {
-    height: 50px;
-  }
-  #admin-setting{
+  #logo{
     left: 5vw;
-  }
-  #admin-setting img {
     border-radius: 50%;
-    border: rgba(255, 255, 255, 0%) solid 2px;
+    border: rgba(0, 0, 0, 0%) solid 2px;
   }
-  #admin-setting img:hover{
-    border-color: rgba(255, 255, 255, 100%);
+  #logo:hover{
+    background-color: transparent;
   }
-  #admin-setting img, #admin-setting img:hover {
-    transition: border-bottom-color .3s, border-top-color .3s, border-left-color .3s, border-right-color .3s;
+  #darkmode-toggle-navbar{
+    right: 5vw;
   }
-  #vue{
-    right: 10vw;
+  #logo:hover, #darkmode-toggle-navbar:hover{
+    border-color: whitesmoke;
   }
   .navbarActiveClass{
+    cursor: default;
     background-color: white;
     color: black;
     padding-block: 10px;
@@ -118,21 +114,23 @@ export default {
     border-radius: 20px;
   }
   @media (min-width: 1200px) {
-    #admin-setting,#admin-setting img, #vue, #vue img {
+    #logo, #darkmode-toggle-navbar{
       opacity: 100%;
-      transition: opacity .3s, visibility .5s;
+      transition: opacity .3s, visibility .5s,
+                  border-bottom-color .3s, border-top-color .3s, border-left-color .3s, border-right-color .3s;
+      cursor: pointer;
       visibility: visible;
     }
     .navbar:has(a.navbarActiveClass.home){
-      background-position-x: 63%;
+      background-position-x: 60%;
     }
     .navbar:has(a.navbarActiveClass.me){
       background-position-x: 50%;
     }
     .navbar:has(a.navbarActiveClass.works){
-      background-position-x: 37%;
+      background-position-x: 40%;
     }
-    .navbar a:hover:not(.navbarActiveClass, #vue, #admin-setting){
+    .navbar a:hover:not(.navbarActiveClass){
       padding-block: 10px;
     }
     .link-container a {

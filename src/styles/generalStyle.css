@@ -1,15 +1,22 @@
 :root {
-    --primary-color: rgba(81,191,27,1);
+    --text-color: #2c3e50;
+    --text-color-secondary: gray;
+    --primary-color: rgba(240,240,240,1);
     --primary-color-transparent: rgba(240,240,240,.9);
     --secondary-hover-color: rgb(220,220,220);
     --secondary-hover-color-transparent: rgb(220,220,220,.9);
-    --tertiary-color: rgba(240,240,240,1);
-    --black-gradient: linear-gradient(90deg, rgb(20,20,20,1) 30%, rgb(64,64,64,1) 50%, rgb(20,20,20,1) 70%);
-    --white-active-background: linear-gradient(90deg, rgb(0,0,0,0) 0%, rgb(64,64,64,1) 50%, rgb(0,0,0,0) 100%);
+    --tertiary-color: gray;
     --background-color: white;
+    --navbar-shadow: gray;
+    --highlight-color: brown;
+
+    --black-gradient: radial-gradient(circle at 100%, rgb(20,20,20) 30%, rgb(100, 100, 100) 50%, rgb(20,20,20) 70%);
+    --white-active-background: linear-gradient(90deg, rgb(0,0,0,0) 0%, rgb(64,64,64,1) 50%, rgb(0,0,0,0) 100%);
 }
+
 html{
     background-color: var(--background-color);
+    transition: background-color 1s;
 }
 .primaryAction {
     background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-hover-color) 50%, var(--primary-color) 100%);
@@ -77,7 +84,7 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--tertiary-color);
+    background-color: var(--primary-color);
     border-radius: 10px;
     width: 400px;
     max-width: 90vw;
@@ -85,7 +92,7 @@ a:hover {
     font-size: .8em;
 }
 .card .find-out {
-    color: gray;
+    color: var(--text-color-secondary);
 }
 .card .find-out > span:not(#more){
     opacity: 0;
@@ -96,13 +103,13 @@ a:hover {
     transition: opacity 1s;
 }
 .card:hover .find-out > span:is(#more){
-    color: brown;
+    color: var(--highlight-color);
     transition: color 1s;
 }
 .card .find-out {
     font-size: 15pt;
 }
- .material-symbols-outlined {
+.material-symbols-outlined {
      font-variation-settings:
              'FILL' 0,
              'wght' 400,
@@ -113,3 +120,5 @@ a:hover {
  #heading{
      font-weight: bold;
  }
+
+
