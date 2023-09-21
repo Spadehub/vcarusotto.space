@@ -72,7 +72,7 @@ export function routeTo(destination: string, parameters?: undefined) {
     const destinationRoute = getRoute(destination)
     if (destinationRoute) {
         if (parameters) {
-            router.push({name: destinationRoute.name, params: {title: 'test'}})
+            router.push({name: destinationRoute.name, params: parameters})
                 .catch(err => console.error(err))
         } else {
             router.push({path: destinationRoute.path})

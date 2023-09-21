@@ -1,7 +1,11 @@
 <template>
   <section id="app">
     <NavBar @toggle-darkmode="toggleDarkMode()" :is-dark-mode="isDarkMode"/>
-    <router-view/>
+    <router-view v-slot=" { Component }">
+      <keep-alive exclude="WorkComp">
+          <component :is="Component"></component>
+      </keep-alive>
+    </router-view>
     <DarkmodeSwitcher :is-dark-mode="isDarkMode" @click="toggleDarkMode()" id="darkmode-toggle-floating"/>
   </section>
 </template>
@@ -24,7 +28,7 @@ export default defineComponent({
   },
   mounted() {
     this.isDarkMode = this.hasDarkPreference();
-
+    document.documentElement.setAttribute('dark-mode', this.isDarkMode.toString())
   },
   methods: {
     hasDarkPreference(){

@@ -1,252 +1,297 @@
 <template>
-  <!--TODO: redesign homepage -->
-  <section class="main">
-      <img src="../assets/project-images/flash-project-mockups.png" id="bgImage">
-      <router-link to="/me" class="card about-me-short">
-        <div class="card-content">
-          <span id="my-name-is">My name is</span>
-          <img id="image" src="../assets/logo.png" alt="picture unavailable">
-          <div id="name">
-            <span>VINCENZO</span>
-            <br>
-            <span>CARUSOTTO</span>
-          </div>
-          <div id="profession">
-            <p>and I</p>
-            <p>develop</p>
-            <p>and</p>
-            <p>design</p>
-            <p>SOFTWARE</p>
-          </div>
-        </div>
-        <div class="find-out">
-          <span>find out</span>
-          <span id="more"> more </span>
-          <span>about me</span>
-        </div>
-      </router-link>
-    <router-link to="/work/8487" class="card latest-project">
-      <div class="card-content">
-        <span>My latest Project</span>
-        <div class="primaryAction">
-          <img src="../assets/avatar/flash_icon.png" alt="flash chat icon not available">
-          <span>Flash Chat</span>
-        </div>
-        <span>Web App and iOS App</span>
+  <section class="main" :style="{overflow: showDiscover ? 'unset' : 'hidden'}">
+      <div id="background-image" v-show="showDiscover"/>
+    <transition-group name="fade">
+      <div class="terminal" v-if="showTermynal">
+        <v-termynal :lineDelay="100" @finish="dismissTermynal()" forward-button>
+          <vt-input>yarn run serve</vt-input>
+          <vt-progress :progressDelay="0.69"/>
+          <vt-text>Serving portfolio...</vt-text>
+          <vt-spinner/>
+          <vt-text>Done in 69ms</vt-text>
+        </v-termynal>
       </div>
-      <div class="find-out">
-        <span>find out </span>
-        <span id="more"> more </span>
-        <span>about my latest project</span>
+
+      <div class="homepage" :class="{'move-up' : showDiscover}" v-else @wheel.prevent="this.handleScroll()">
+          <div id="hello" :class="{'hide' : showDiscover}">
+            <span>he</span>
+            <span>llo</span>
+            <span>, I am</span>
+          </div>
+        <div class="banner" :class="{'animate-entry': !showDiscover}">
+          <div id="name" :class="{'name-animate' : showDiscover}">
+            <span>Vincenzo Carusotto</span>
+          </div>
+          <span id="profession" :style="{color: showDiscover ? 'var(--tertiary-color)' : 'inherit'}">Software Developer</span>
+          <span id="expand-more" class="material-symbols-outlined"
+                :class="{'disabled' : showDiscover}" @click="this.handleScroll()">
+            expand_more</span>
+        </div>
+
+          <div class="discover" :class="{'hide' : !showDiscover}">
+            <h1>Discover</h1>
+            <div class="cards">
+              <router-link to="/me" href="" class="card" id="persona">
+                <img src="../assets/application-photo.png" alt="">
+                <span>More about <br> my Persona</span>
+                <img src="../assets/logo.png" alt="">
+              </router-link>
+              <router-link to="/works" class="card" id="works">
+                <img src="../assets/project-images/flash-project-mockups.png" alt="">
+                <span>More about <br> my Works</span>
+                <img src="../assets/project-images/momhunt-screenshots.png" alt="">
+              </router-link>
+            </div>
+            <div id="background-gradient"/>
+          </div>
+
       </div>
-    </router-link>
-    <a id="vue" href="https://vuejs.org">
-      <img src="../assets/made-with-vue.png" alt="made with Vue.js">
-    </a>
+    </transition-group>
   </section>
 </template>
 
 <script>
+import {
+  VTermynal,
+  VtInput,
+  VtProgress,
+  VtText,
+  VtSpinner
+} from "@lehoczky/vue-termynal"
+
 export default {
-  name: "HomePage"
+  name: "HomePage",
+  components: {VtSpinner, VtText, VtProgress, VtInput, VTermynal},
+  data(){
+    return{
+      showTermynal: true,
+      showDiscover: false
+    }
+  },
+  methods:{
+    dismissTermynal(){
+      this.showTermynal = false
+    },
+    handleScroll(){
+      this.showDiscover = true
+    }
+  }
 }
+
 </script>
 
 <style scoped>
-p{
-  padding: 0;
-  margin: 0;
+.main{
+  font-size: 3em;
+  justify-content: center;
+}
+.terminal{
+  position: absolute;
+}
+.homepage{
+  height: inherit;
+  width: 100%;
+  display: flex;
+  flex-direction: inherit;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 10%;
+  transition: top 1s;
+}
+.move-up{
+  top: 0;
+}
+#background-image{
+  background-image: var(--homepage-background);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50%;
+  position: absolute;
+  top: -100px;
+  width: 100%;
+  z-index: -1;
+  -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  -webkit-transition: background-image 1s ease-in-out;
+  transition: background-image 1s ease-in-out;
 }
 
-#bgImage {
-  position: absolute;
-  right: 20px;
-  top: 400px;
-  max-width: 100vw;
-  height: fit-content;
-  max-height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-}
-.card{
-  position: relative;
-  width: 80vw;
-  padding: 30px 30px 10px 30px;
-  cursor: pointer;
-}
-.card:hover{
-  padding: 40px 40px 10px 40px;
-}
-.card, .card:hover{
-  transition: padding-bottom .3s, padding-top .3s, padding-left .3s, padding-right .3s;
-}
-.latest-project{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 30pt;
-  background-color: rgba(100, 100, 100, 80%);
-  border-radius: 20px;
-  color: white;
-  box-shadow: 0 0 100px 5px gray;
-}
-.latest-project:hover{
-  background-color: rgba(200, 200, 200, 80%);
-  color: black;
-}
-.latest-project .card-content span:nth-child(1){
-  font-weight: bold;
-}
-.latest-project .card-content img{
-  max-width: 70px;
-  margin-right: 10px;
-}
-.latest-project .card-content div:nth-child(2){
-  padding-right: 20px;
-  margin-block: 5px;
-  font-weight: bolder;
-  font-size: 120%;
-  font-style: italic;
-  font-family: Futura, serif;
-  border-radius: 25px;
+.cards{
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  color: white;
-  white-space: nowrap;
 }
-.latest-project .card-content span:nth-child(3){
-  font-size: 70%;
+.card{
+  padding: 20px;
 }
-.latest-project .find-out{
-  color: rgb(220,220,220);
-  position: relative;
-  left: 60px;
-  color: gray;
-}
-.about-me-short{
-  display: grid;
-  font-size: 30pt;
-  background-color: rgba(240, 240, 240, 90%);
-  border-radius: 20px;
-  box-shadow: 0 0 100px 5px gray;
-  justify-content: center;
-  color: black;
-}
-.about-me-short:hover{
-  background-color: rgba(210, 210, 210, 95%);
-}
-.about-me-short .find-out {
-  color: gray;
-}
-#my-name-is{
-  grid-column: 1;
-  grid-row: 1;
-}
-#image, #name {
-  grid-column: 1;
-  grid-row: 2;
-}
-#image{
-  position: relative;
-  left: -50px;
-}
-#name{
+#hello {
+  opacity: 1;
+  transition: opacity 1s, transform 1s;
   position: relative;
   left: 50px;
+  animation: move-left ease 1s;
+  animation-delay: 2.5s;
+  animation-fill-mode: forwards;
+  margin-top: auto;
+}
+#hello *{
+  animation: fade-in ease 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+#hello span:nth-child(1){
+  animation-delay: 1s;
+}
+#hello span:nth-child(2){
+  animation-delay: 1.5s;
+  color: var(--tertiary-color);
+}
+#hello span:nth-child(3){
+  animation-delay: 3s;
+  color: var(--tertiary-color);
+}
+.banner{
+  display: flex;
+  flex-direction: inherit;
+  align-items: center;
+
+}
+.animate-entry *{
+  animation: slide-fade-in ease 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+.hide {
+  opacity: 0 !important;
+}
+#name{
+  animation-delay: 4s;
 }
 #profession{
-  grid-column: 1;
-  grid-row: 3;
+  animation-delay: 5s;
+  font-size: 30pt;
 }
-.card-content{
-  display: inherit;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 400px;
+#expand-more{
+  animation-delay: 6s;
+  margin-top: 30px;
+  cursor: pointer;
+  width: 10%;
+  min-width: 100px;
+  border-radius: 25px;
+  z-index: 1;
+  transition: background-color .5s;
 }
-#my-name-is{
-  color: gray;
-  min-width: 210px;
-  text-align: center;
+#expand-more:hover{
+  background-color: var(--secondary-hover-color);
 }
-#image{
-  width: 100px;
-  height: 100px;
-  align-self: center;
+#expand-more:is(.disabled) {
+  background-color: unset;
+  cursor: unset;
 }
-#profession {
-  height: 6em;
+.discover{
+  width: inherit;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+  transition: opacity 1s;
+  margin-bottom: auto;
 }
-#profession p {
-  margin: 0;
-  text-align: center;
+#background-gradient{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 20%;
+  background: var(--background-gradient-color);
+  -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,1)));
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1));
+  z-index: -1;
 }
-#profession p:nth-child(1), p:nth-child(3) {
-  color: gray;
-  font-size: 20pt;
+.cards{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
 }
-#profession p:nth-child(2){
-  font-family: Silom, sans-serif;
+.card{
+  height: 150px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  outline: 0.2rem solid transparent;
+  outline-offset: 5px;
+  transition: outline-color .3s, background-color 1s !important;
 }
-#profession p:nth-child(4){
-  font-family: Snell Roundhand, sans-serif;
+.card:hover{
+  outline-color: var(--highlight-color-secondary);
 }
-#profession p:nth-child(5) {
-  font-size: 110%;
-  font-weight: bold;
+.card img {
+  height: inherit;
+  position: absolute;
+}
+.card#persona img:nth-child(1){
+  left: -30px
+}
+.card#persona img:nth-child(3){
+  right: -70px
+}
+.card#works img:nth-child(1){
+  left: -30px;
+  height: 150%;
+}
+.card#works img:nth-child(3){
+  right: -220px
+}
+
+@keyframes slide-fade-in {
+  from{
+    opacity: 0;
+    transform: translateY(20%);
+    visibility: hidden;
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0%);
+    transition: transform 1s;
+    visibility: visible;
+  }
+}
+@keyframes fade-in {
+  from{
+    opacity: 0;
+    visibility: hidden;
+  }
+  to{
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes move-left {
+  from {
+    left: 50px;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes scale-bigger {
+  from{
+    transform: unset;
+  }
+  to{
+    transform: scale(1.3);
+  }
 }
 
 @media (min-width: 1200px) {
-  .main {
-    flex-direction: row-reverse;
-    justify-content: center;
+  .cards{
+    flex-direction: row;
   }
-  .card{
-    width: 40vw;
-  }
-  #bgImage{
-    max-width: 50vw;
-    top: 0;
-    left: 0;
-  }
-  .about-me-short {
-    display: grid;
-  }
-  #image{
-    width: auto;
-    height: 8em;
-    position: relative;
-    top: -45px;
-    left: 0;
-    grid-column: 1;
-    grid-row: 2;
-  }
-  #image, #my-name-is{
-    margin-right: 20px;
-    text-align: right;
-  }
-  #my-name-is{
-    grid-column: 1;
-    grid-row: 1;
-    align-self: flex-start;
-  }
-  #name{
-    grid-column: 2;
-    grid-row: 1;
-    position: unset;
-  }
-  #profession{
-    grid-column: 2;
-    grid-row: 2;
-  }
-  #profession p {
-    text-align: left;
+  .name-animate{
+    animation: scale-bigger ease 1s !important;
+    animation-fill-mode: forwards !important;
   }
 }
 

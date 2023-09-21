@@ -81,8 +81,6 @@ export default {
       console.log(error)
       //TODO: display error correctly
     })
-  },
-  methods: {
   }
 }
 </script>

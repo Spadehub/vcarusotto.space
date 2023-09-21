@@ -87,15 +87,12 @@
           <div class="spoken-languages">
             <div class="entry">
               <img src="../assets/ita-flag.png">
-              <span>Italian</span>
             </div>
             <div class="entry">
               <img src="../assets/deu-flag.jpg">
-              <span>German</span>
             </div>
             <div class="entry">
               <img src="../assets/eng-flag.png">
-              <span>English</span>
             </div>
           </div>
           <br/>
@@ -283,7 +280,6 @@ export default {
 }
 .entry img{
   width: 3.5em;
-  padding-inline: 20px;
 }
 .projects > span:nth-child(2){
   font-size: 10em;
@@ -299,23 +295,27 @@ export default {
   position: relative;
   left: 8%;
 }
+.spoken-languages{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+  height: 100px;
+}
 .spoken-languages .entry, .programming-languages .entry{
   border-radius: 5px;
 }
 .spoken-languages .entry{
   display: flex;
-  justify-content: start;
   align-items: center;
-  width: 150px;
-  margin-bottom: 10px;
 }
-.languages .entry{
+.programming-languages .entry{
   background: var(--secondary-hover-color);
 }
-.languages .entry img{
-  border-radius: 40%;
-  height: 20px;
-  width: 30px;
+.spoken-languages .entry img{
+  border-radius: 10%;
+  height: 50px;
+  width: 70px;
   align-items: end;
 }
 .languages > span:nth-child(1){

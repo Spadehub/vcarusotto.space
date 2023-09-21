@@ -1,27 +1,37 @@
 <template>
   <section class="navbar">
-    <img src="../assets/logo.png" alt="logo" id="logo">
+    <img src="../assets/logo.png" alt="logo" id="logo" @click="routeTo('HomePage')">
     <div class="link-container">
       <router-link to="/home" class="home">Home</router-link>
       <router-link to="/me" class="me">About me</router-link>
       <router-link to="/works" class="works">My Works</router-link>
     </div>
-    <DarkmodeSwitcher :is-dark-mode="isDarkMode" @click="toggleMode()" id="darkmode-toggle-navbar"/>
+    <div id="settings">
+      <LanguageSwitcher id="language-switcher-navbar"/>
+      <DarkmodeSwitcher :is-dark-mode="isDarkMode" @click="toggleMode()" id="darkmode-toggle-navbar"/>
+    </div>
   </section>
 </template>
 
 <script>
 import DarkmodeSwitcher from "@/components/miniComponents/DarkmodeSwitcher";
+import {routeTo} from "@/scripts/Router";
+import LanguageSwitcher from "@/components/miniComponents/LanguageSwitcher";
+
 export default {
   name: "NavBar",
-  components: {DarkmodeSwitcher},
+  components: {LanguageSwitcher, DarkmodeSwitcher},
   props: {
     isDarkMode: Boolean
+  },
+  data(){
+    return {
+      routeTo
+    }
   },
   methods:{
     toggleMode(){
       this.$emit('toggle-darkmode');
-      console.log("toggled to " + this.isDarkMode)
     }
   }
 }
@@ -83,12 +93,10 @@ export default {
   .navbar a, .navbar a:hover:not(.navbarActiveClass) {
     transition: .3s;
   }
-  #logo, #darkmode-toggle-navbar{
+  #logo, #settings{
     height: 50px;
-    width: 50px;
     position: fixed;
     transition: opacity .3s, visibility .5s;
-    opacity: 0;
     visibility: hidden;
   }
   #logo{
@@ -96,13 +104,17 @@ export default {
     border-radius: 50%;
     border: rgba(0, 0, 0, 0%) solid 2px;
   }
-  #logo:hover{
-    background-color: transparent;
-  }
-  #darkmode-toggle-navbar{
+  #settings{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 150px;
     right: 5vw;
   }
-  #logo:hover, #darkmode-toggle-navbar:hover{
+  #language-switcher-navbar, #darkmode-toggle-navbar{
+    transition: border-bottom-color .3s, border-top-color .3s, border-left-color .3s, border-right-color .3s;
+  }
+  #logo:hover, #language-switcher-navbar:hover, #darkmode-toggle-navbar:hover{
     border-color: whitesmoke;
   }
   .navbarActiveClass{
@@ -114,10 +126,10 @@ export default {
     border-radius: 20px;
   }
   @media (min-width: 1200px) {
-    #logo, #darkmode-toggle-navbar{
+    #logo, #settings{
       opacity: 100%;
       transition: opacity .3s, visibility .5s,
-                  border-bottom-color .3s, border-top-color .3s, border-left-color .3s, border-right-color .3s;
+      border-bottom-color .3s, border-top-color .3s, border-left-color .3s, border-right-color .3s;
       cursor: pointer;
       visibility: visible;
     }
