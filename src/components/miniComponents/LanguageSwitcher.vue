@@ -1,22 +1,29 @@
 <template>
-  <div class="switcher" :class="{'expanded': languagesDropDownActive}" @click="handleSwitcher()">
-    <img src="../../assets/eng-flag.png" alt="English"
-         v-if="selectedLanguage === languages.ENGLISH || languagesDropDownActive"
-          @click="changeLanguage(languages.ENGLISH)">
-    <img src="../../assets/deu-flag.jpg" alt="Deutsch"
-         v-if="selectedLanguage === languages.GERMAN  || languagesDropDownActive"
-         @click="changeLanguage(languages.GERMAN)">
-    <img src="../../assets/ita-flag.png" alt="Italiano"
-         v-if="selectedLanguage === languages.ITALIAN  || languagesDropDownActive"
-         @click="changeLanguage(languages.ITALIAN)">
+  <div class="switcher">
+    <div v-for="(language) of languages" :key="language">
+      <img :src="language.flag" :alt="language.desc" @click="changeLanguage(language)"
+            :class="{'selected' : selectedLanguage === language} ">
+    </div>
   </div>
 </template>
 
 <script>
 const languages = {
-  ENGLISH: 'English',
-  GERMAN: 'Deutsch',
-  ITALIAN: 'Italiano'
+  ENGLISH: {
+    desc: 'English',
+    flag: require('../../assets/eng-flag.png'),
+    position: '0'
+  },
+  GERMAN: {
+    desc: 'Deutsch',
+    flag: require('../../assets/deu-flag.jpg'),
+    position: '-66px'
+  },
+  ITALIAN: {
+    desc: 'Italiano',
+    flag: require('../../assets/ita-flag.png'),
+    position: '-132px'
+  }
 }
 export default {
   name: "LanguageSwitcher",
@@ -24,17 +31,12 @@ export default {
     return{
       languages,
       selectedLanguage: languages.ENGLISH,
-      languagesDropDownActive: false
     }
   },
   methods:{
-    handleSwitcher(){
-      this.languagesDropDownActive = !this.languagesDropDownActive
-    },
     changeLanguage(lang){
       if (lang !== this.selectedLanguage){
         this.selectedLanguage = lang
-
       }
     }
   }
@@ -43,35 +45,39 @@ export default {
 
 <style scoped>
 .switcher{
+  height: fit-content;
+  max-height: 50px;
+  width: 50px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  height: 50px;
-  min-width: 50px;
+  gap: 10px;
   background-color: var(--tertiary-color);
-  border-radius: 50%;
-  border: rgba(0,0,0,0%) solid 2px;
-  transition: height 1s; /* TODO: make it work */
+  border-radius: 50px;
+  transition: max-height .5s ease !important;
 }
 .switcher img {
-  width: 35px;
-  min-height: 25px;
-  border-radius: 30%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   padding: 5px;
-  transition: background-color .2s;
+  position: relative;
+  top: v-bind(selectedLanguage.position);
+  transition: top .5s ease,  background-color .5s ease;
 }
-.expanded img{
-  margin: 10px;
-  min-height: 30px;
+.switcher img:hover{
+  background-color: var(--primary-color-transparent);
 }
-.expanded img:hover{
-  background-color: var(--secondary-hover-color-transparent);
+.switcher:hover{
+  max-height: 200px;
+  border-radius: 35px;
 }
-.expanded{
-  min-height: 50px;
-  height: fit-content;
-  border-radius: 20px;
-  border: none;
+.switcher:hover img{
+  top: 0;
+}
+.switcher:hover .selected{
+  background-color: var(--primary-color);
 }
 </style>
