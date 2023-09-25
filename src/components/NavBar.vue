@@ -98,6 +98,7 @@ export default {
     position: fixed;
     transition: opacity .3s, visibility .5s;
     visibility: hidden;
+    opacity: 0;
   }
   #logo{
     left: 5vw;
@@ -109,7 +110,7 @@ export default {
     flex-direction: row;
     justify-content: space-around;
     width: 150px;
-    right: 5vw;
+    right: 2vw;
   }
   #language-switcher-navbar, #darkmode-toggle-navbar{
     transition: border-bottom-color .3s, border-top-color .3s, border-left-color .3s, border-right-color .3s;
@@ -128,8 +129,6 @@ export default {
   @media (min-width: 1200px) {
     #logo, #settings{
       opacity: 100%;
-      transition: opacity .3s, visibility .5s,
-      border-bottom-color .3s, border-top-color .3s, border-left-color .3s, border-right-color .3s;
       cursor: pointer;
       visibility: visible;
     }

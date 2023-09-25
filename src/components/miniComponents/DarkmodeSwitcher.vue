@@ -16,8 +16,8 @@ export default {
 
 <style scoped>
   .darkmode-toggle {
-    height: 50px;
-    width: 50px;
+    height: 46px;
+    width: 46px;
     padding: 0;
     margin: 0;
     display: flex;

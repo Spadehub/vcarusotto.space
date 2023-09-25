@@ -1,5 +1,5 @@
 <template>
-  <div class="switcher">
+  <div class="switcher" :class="{'switcher-expanded' : isExpandable}" @mouseover="isExpandable = true">
     <div v-for="(language) of languages" :key="language">
       <img :src="language.flag" :alt="language.desc" @click="changeLanguage(language)"
             :class="{'selected' : selectedLanguage === language} ">
@@ -31,10 +31,12 @@ export default {
     return{
       languages,
       selectedLanguage: languages.ENGLISH,
+      isExpandable: false
     }
   },
   methods:{
     changeLanguage(lang){
+      this.isExpandable = false
       if (lang !== this.selectedLanguage){
         this.selectedLanguage = lang
       }
@@ -58,6 +60,10 @@ export default {
   border-radius: 50px;
   transition: max-height .5s ease !important;
 }
+.switcher-expanded:hover{
+  max-height: 200px;
+  border-radius: 35px;
+}
 .switcher img {
   width: 40px;
   height: 40px;
@@ -70,14 +76,10 @@ export default {
 .switcher img:hover{
   background-color: var(--primary-color-transparent);
 }
-.switcher:hover{
-  max-height: 200px;
-  border-radius: 35px;
-}
-.switcher:hover img{
+.switcher-expanded:hover img{
   top: 0;
 }
-.switcher:hover .selected{
+.switcher:hover .selected {
   background-color: var(--primary-color);
 }
 </style>
