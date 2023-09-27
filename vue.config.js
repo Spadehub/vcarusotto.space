@@ -4,7 +4,7 @@ module.exports = defineConfig({
 
   pluginOptions: {
     i18n: {
-      locale: 'yarn build',
+      locale: 'en',
       fallbackLocale: 'en',
       localeDir: 'locales',
       enableLegacy: false,

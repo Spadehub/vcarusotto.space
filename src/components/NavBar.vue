@@ -2,9 +2,9 @@
   <section class="navbar">
     <img src="../assets/logo.png" alt="logo" id="logo" @click="routeTo('HomePage')">
     <div class="link-container">
-      <router-link to="/home" class="home">Home</router-link>
-      <router-link to="/me" class="me">About me</router-link>
-      <router-link to="/works" class="works">My Works</router-link>
+      <router-link to="/home" class="home">{{ $t("navbar.home") }}</router-link>
+      <router-link to="/me" class="me">{{ $t("navbar.about_me") }}</router-link>
+      <router-link to="/works" class="works">{{ $t("navbar.my_works") }}</router-link>
     </div>
     <div id="settings">
       <LanguageSwitcher id="language-switcher-navbar"/>

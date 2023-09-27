@@ -14,31 +14,33 @@
 
       <div class="homepage" :class="{'move-up' : showDiscover}" v-else @wheel.prevent="this.handleScroll()">
           <div id="hello" :class="{'hide' : showDiscover}">
-            <span>he</span>
-            <span>llo</span>
-            <span>, I am</span>
+            <span>{{ $t("homepage.he") }}</span>
+            <span>{{ $t("homepage.llo") }}</span>
+            <span>{{ $t("homepage.iam") }}</span>
           </div>
         <div class="banner" :class="{'animate-entry': !showDiscover}">
           <div id="name" :class="{'name-animate' : showDiscover}">
             <span>Vincenzo Carusotto</span>
           </div>
-          <span id="profession" :style="{color: showDiscover ? 'var(--tertiary-color)' : 'inherit'}">Software Developer</span>
+          <span id="profession" :style="{color: showDiscover ? 'var(--tertiary-color)' : 'inherit'}">
+            {{ $t("homepage.software_developer") }}
+          </span>
           <span id="expand-more" class="material-symbols-outlined"
                 :class="{'disabled' : showDiscover}" @click="this.handleScroll()">
             expand_more</span>
         </div>
 
           <div class="discover" :class="{'hide' : !showDiscover}">
-            <h1>Discover</h1>
+            <h1>{{ $t("homepage.discover") }}</h1>
             <div class="cards">
               <router-link to="/me" href="" class="card" id="persona">
                 <img src="../assets/application-photo.png" alt="">
-                <span>More about <br> my Persona</span>
+                <span>{{ $t("homepage.more_about") }}<br>{{$t("homepage.my_persona")}}</span>
                 <img src="../assets/logo.png" alt="">
               </router-link>
               <router-link to="/works" class="card" id="works">
                 <img src="../assets/project-images/flash-project-mockups.png" alt="">
-                <span>More about <br> my Works</span>
+                <span>{{ $t("homepage.more_about") }}<br>{{$t("homepage.my_works")}}</span>
                 <img src="../assets/project-images/momhunt-screenshots.png" alt="">
               </router-link>
             </div>

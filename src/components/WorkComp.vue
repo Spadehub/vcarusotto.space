@@ -11,9 +11,9 @@
         <span class="title">{{ work.name }}</span>
       </div>
       <span id="projectID">
-        Project ID: #{{ work.id }}
+        {{ $t("work.project_id") }}: #{{ work.id }}
         |
-        Creation Date: {{ new Date(work['created_at']).toLocaleDateString('de-DE') }}
+        {{ $t("work.creation_date") }}: {{ new Date(work['created_at']).toLocaleDateString('de-DE') }}
       </span>
 
       <div class="platforms">
@@ -24,25 +24,25 @@
         <a :href="work['web_url']" class="card">
           <img src="../assets/gitlab-logo.png">
           <div class="find-out">
-            <span>visit the</span>
-            <span id="more"> Repository </span>
-            <span>for more</span>
+            <span>{{ $t("work.visit_the") }}</span>
+            <span id="more"> {{ " " + $t("work.repository") + " " }} </span>
+            <span>{{ $t("work.for_more") }}</span>
           </div>
         </a>
       </div>
       <div id="made-with">
-        <span class="title smaller-title">Made With:</span>
+        <span class="title smaller-title">{{ $t("work.made_with") }}:</span>
         <div class="entries">
           <BadgeComp  v-for="madeWith in localWork.madeWith" :key="localWork.madeWith.indexOf(madeWith)"
                       :text="madeWith" text_color="var(--text-color)" bg_color="var(--primary-color)"/>
         </div>
       </div>
       <div class="description">
-        <span class="title smaller-title">Description</span>
+        <span class="title smaller-title">{{ $t("work.desc_label") }}</span>
         <span>{{ work.description ?? "/"}}</span>
       </div>
       <div class="creators-comment">
-        <span class="title smaller-title">Creator's Comment</span>
+        <span class="title smaller-title">{{ $t("work.creators_comment_label") }}</span>
         <span>"{{ localWork.creatorsComment ?? "/"}}"</span>
       </div>
       <div class="screenshots">

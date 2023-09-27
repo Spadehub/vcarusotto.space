@@ -1,7 +1,7 @@
 <template>
   <section class="main my-works">
     <div id="loading" v-if="works.length <= 0">
-      <span>Fetching Gitlab Repositories...</span>
+      <span>Fetching Repositories...</span>
       <LoadingAnim/>
     </div>
     <div v-else class="entry" v-for="work in works" :key="works.indexOf(work)">
@@ -15,9 +15,9 @@
           <span>{{ work.description }}</span>
         </div>
         <div class="find-out">
-          <span>find out </span>
-          <span id="more"> more </span>
-          <span>about {{ work.name }}</span>
+          <span>{{ $t("find_out") }}</span>
+          <span id="more"> {{ " " + $t("more") + " "}} </span>
+          <span>{{ $t("about") + " " + work.name }}</span>
         </div>
         <img :src="getLocalProjectByID(work.id).bgImg" id="bgImg" alt="">
       </router-link>

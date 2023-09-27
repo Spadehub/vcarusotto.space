@@ -7,41 +7,41 @@
     </div>
     <img id="image" src="../assets/application-photo.png" alt="picture unavailable">
     <div class="main-info">
-      <span id="heading">Full Stack Developer</span>
-      <span>Based in Stuttgart,<br>Germany</span>
+      <span id="heading">{{ $t("about_me.full_stack_dev") }}</span>
+      <span>{{ $t("about_me.based_in") + " " + $t("about_me.city") }},<br>{{ $t("about_me.country") }}</span>
       <br/>
       <div class="card personal-info">
-        <span>Personal Information</span>
+        <span>{{ $t("about_me.personal_info") }}</span>
         <div class="table">
-          <span id="left">Full Name:</span>
+          <span id="left">{{ $t("about_me.full_name") }}:</span>
           <span id="right">Vincenzo Pio Emanuele Carusotto</span>
-          <span id="left">Birth:</span>
-          <span id="right">19.03.1998 in Canicattì, Italy</span>
+          <span id="left">{{ $t("about_me.birth") }}:</span>
+          <span id="right">{{ $t("about_me.birth_date_place") }}</span>
         </div>
       </div>
       <br>
       <div class="edu">
         <div class="uni-link">
-          <span>Student at</span>
+          <span>{{ $t("about_me.student_at") }}</span>
           <a href="https://www.hdm-stuttgart.de" id="hdm" class="card">
             <div id="hdm-logo">
               <img src="../assets/hdm-logo.png">
               <img id="revealed" src="../assets/hdm-logo-revealed.png">
             </div>
-            <span>STUTTGART MEDIA</span>
-            <span>UNIVERSITY</span>
+            <span>{{ $t("about_me.hdm_line1") }}</span>
+            <span>{{ $t("about_me.hdm_line2") }}</span>
           </a>
         </div>
         <div class="card target-degree">
-          <span>Target Degree</span>
-          <span>Economic Computer Science and Digital Media</span>
-          <i>Bachelor of Science</i>
+          <span>{{ $t("about_me.target_degree") }}</span>
+          <span>{{ $t("about_me.study_course") }}</span>
+          <i>{{ $t("about_me.bachelor") }}</i>
           <br>
-          <span>Finished approximately:</span>
+          <span>{{ $t("about_me.finished_approximately") }}:</span>
           <span>2025</span>
         </div>
     <div class="card edu-background">
-      <span>Educational Background</span>
+      <span>{{ $t("about_me.edu_background") }}</span>
       <a v-for="school in eduBackground" :key="school.id" :href="school.site" class="entry">
         <span id="date" v-html="school.date"/>
         <div id="school-desc">
@@ -55,16 +55,16 @@
     <div class="fixed-cards">
       <div class="fixed-left">
         <div class="card expertise">
-          <span id="title">Expertise</span>
+          <span id="title">{{ $t("about_me.expertise") }}</span>
           <div class="entry">
-            <span>Mobile App Development</span>
+            <span>{{ $t("about_me.mob_app_dev") }}</span>
             <div class="entry-images">
               <img src="../assets/apple-logo.svg">
               <img src="../assets/android-logo.png">
             </div>
           </div>
           <div class="entry">
-            <span>Web Development</span>
+            <span>{{ $t("about_me.web_dev") }}</span>
             <div class="entry-images">
               <img src="../assets/vue-logo.png">
               <img src="../assets/django-logo.png">
@@ -72,18 +72,18 @@
           </div>
         </div>
         <router-link to="/works" class="card projects">
-          <span id="title">Projects</span>
+          <span id="title">{{ $t("about_me.projects") }}</span>
           <span>{{ projectsCount }}</span>
           <div class="find-out">
-            <span>find out </span>
-            <span id="more"> more </span>
-            <span>about my works</span>
+            <span>{{ $t("find_out") }}</span>
+            <span id="more"> {{ " " + $t("more") + " "}} </span>
+            <span>{{ $t("about") + " " + $t("my_works") }}</span>
           </div>
         </router-link>
       </div>
       <div class="fixed-right">
         <div class="card languages">
-          <span id="title">Languages</span>
+          <span id="title">{{ $t("about_me.languages") }}</span>
           <div class="spoken-languages">
             <div class="entry">
               <img src="../assets/ita-flag.png">
@@ -108,38 +108,19 @@
         </div>
         </div>
       <div class="card contact">
-        <span id="title">Contact</span>
-        <span>Stuttgart, Germany</span>
+        <span id="title">{{ $t("about_me.contact") }}</span>
+        <span>{{ $t("about_me.city") }}, {{ $t("about_me.country") }}</span>
         <br/>
         <div class="mail">
-          <a id="sendBtn" href="mailto:vincenzocarusotto@hotmail.com"><span class="material-symbols-outlined">mail</span> Send Mail</a>
+          <a id="sendBtn" href="mailto:vincenzocarusotto@hotmail.com"><span class="material-symbols-outlined">mail</span> {{ $t("about_me.send_mail") }}</a>
           <span>vincenzocarusotto@hotmail.com</span>
         </div>
       </div>
     </div>
     </div>
     <div class="card my-story">
-      <span>My Story</span>
-      <span>
-        I was born in Italy in the year 1998 in a town called Canicattì in Sicily.
-        At the age of 8 my father bought our first Personal Computer, a Windows Machine.
-        It ran Windows XP at the time and I remember falling in love with it right away; there was so much to do.
-        As I aged and the technology evolved, I started seeing the potential that these machines had; so much that could be created.
-        At the age of 9 my parents, my aunt and I moved to Spain, Valencia for reasons related to work.
-        Away from my friends and family my child self had difficult time learning a new language and adapting to the new Environment.
-        But shortly after that, for the same reasons, my parents decided to move to Germany, where I currently live.
-        So I had to begin all over again: learn a new language, make new friends, adapting to new and much more different Environment.
-        In the meantime I also started learning English: mostly over my computer or over video-games.
-        I can count myself lucky to like languages and not having too much trouble learning new ones.
-        Even though, moving twice in such short time gave me hard times in my childhood, I can now surely say that I would not be the same Person now without those.
-        The experiences that I made, the cultural differences, the new languages that I learned; they all played a big role in making me a more open minded and mature person.
-        Why did I choose to become a developer? Surely not just because I liked the computer very much.
-        Even long before I wrote my first Hello World program, I felt that people that could do these things have the control over the devices that are like Plugins for our biological self.
-        May sound silly, but nowadays, without a smartphone in your pocket you can hardly do half the of the things that you do on your everyday basis.
-        So I wanted to have that kind of control and thus I started trying to do more and more stuff with my devices,
-        to the point that I could be considered the tech guy, that everyone calls when they need help with their devices.
-        Finally, after writing my first lines of code at school, I decided to study Computer Science.
-      </span>
+      <span>{{ $t("about_me.my_story_label") }}</span>
+      <span>{{ $t("about_me.story") }}</span>
     </div>
     <div id="margin-not-working-chrome-workaround">Easter Egg: Chrome just ignores my margin-bottom, thus here is my Workaround</div>
   </section>

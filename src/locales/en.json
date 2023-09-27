@@ -1,0 +1,72 @@
+{
+  "find_out": "find out",
+  "more": "more",
+  "about": "about",
+  "my_works": "my works",
+
+  "navbar": {
+    "home": "Home",
+    "about_me": "About me",
+    "my_works": "My Works"
+  },
+
+  "homepage": {
+    "he": "he",
+    "llo": "llo",
+    "iam": ", I am",
+    "software_developer": "Software Developer",
+    "discover": "Discover",
+    "more_about": "More about",
+    "my_persona": "my Persona",
+    "my_works": "my Works"
+  },
+  "about_me": {
+    "full_stack_dev": "Full Stack Developer",
+    "based_in": "Based in",
+    "city": "Stuttgart",
+    "country": "Germany",
+    "personal_info": "Personal Information",
+    "full_name": "Full Name",
+    "birth": "Birth",
+    "birth_date_place": "19.03.1998 in Canicattì, Italy",
+    "student_at": "Student at",
+    "hdm_line1": "STUTTGART MEDIA",
+    "hdm_line2": "UNIVERSITY",
+    "target_degree": "Target Degree",
+    "study_course": "Economic Computer Science and Digital Media",
+    "bachelor": "Bachelor of Science",
+    "finished_approximately": "Finished approximately",
+    "edu_background": "Educational Background",
+    "expertise": "Expertise",
+    "mob_app_dev": "Mobile App Development",
+    "web_dev": "Web Development",
+    "projects": "Projects",
+    "languages": "Languages",
+    "contact": "Contact",
+    "send_mail": "Send Mail",
+    "my_story_label": "My Story",
+    "story": "I was born in Italy in the year 1998 in a town called Canicattì in Sicily.\n        At the age of 8 my father bought our first Personal Computer, a Windows Machine.\n        It ran Windows XP at the time and I remember falling in love with it right away; there was so much to do.\n        As I aged and the technology evolved, I started seeing the potential that these machines had; so much that could be created.\n        At the age of 9 my parents, my aunt and I moved to Spain, Valencia for reasons related to work.\n        Away from my friends and family my child self had difficult time learning a new language and adapting to the new Environment.\n        But shortly after that, for the same reasons, my parents decided to move to Germany, where I currently live.\n        So I had to begin all over again: learn a new language, make new friends, adapting to new and much more different Environment.\n        In the meantime I also started learning English: mostly over my computer or over video-games.\n        I can count myself lucky to like languages and not having too much trouble learning new ones.\n        Even though, moving twice in such short time gave me hard times in my childhood, I can now surely say that I would not be the same Person now without those.\n        The experiences that I made, the cultural differences, the new languages that I learned; they all played a big role in making me a more open minded and mature person.\n        Why did I choose to become a developer? Surely not just because I liked the computer very much.\n        Even long before I wrote my first Hello World program, I felt that people that could do these things have the control over the devices that are like Plugins for our biological self.\n        May sound silly, but nowadays, without a smartphone in your pocket you can hardly do half the of the things that you do on your everyday basis.\n        So I wanted to have that kind of control and thus I started trying to do more and more stuff with my devices,\n        to the point that I could be considered the tech guy, that everyone calls when they need help with their devices.\n        Finally, after writing my first lines of code at school, I decided to study Computer Science."
+  },
+  "works":{
+    "fetching_repos": "Fetching Repositories..."
+  },
+  "work": {
+    "project_id": "Project ID",
+    "creation_date": "Creation Date",
+    "visit_the": "visit the",
+    "repository": "Repository",
+    "for_more": "for more",
+    "made_with": "Made With",
+    "desc_label": "Description",
+    "work_desc": {
+
+    },
+    "creators_comment_label": "Creator's Comment",
+    "creators_comment": {
+      "flash": "Flash is my biggest and latest Project (as for now: 10.01.2023). I've learned a lot more from this one than any previously done Project. We used Vue.js for the Front-End and Django for the Back-End. I was predominantly focused on the Front-End and thereby I learned how to use Frameworks in general work and, of course, specifically Vue.js. I liked the Framework a lot, so I decided to my build my Portfolio-Website with it",
+      "locawiki": "This was my first attempt at creating a Mobile App and the first time working with Android Studio. I didn't have much trouble since it's based on Jetbrains' IDEs and I've had already worked with IntelliJ and WebStorm before. It's nothing more than what Google is able to do, but hey, it works as intended.",
+      "momhunt": "I got the idea while being on the phone with my mom. This was my first approach to Unity and I could learn the basics of the Unity Environment as well as the C Sharp Programming Language. I also found out that I don't enjoy developing games as much as I enjoy doing the same with Mobile and Web Apps. Still, I liked the idea and hey, I now have a self-coded game that I can play. :)",
+      "weather_forecast": "This was my first Software Development Project I made at my University. I already knew Java, so my partner and I decided to choose this Project as we considered it to be the most difficult one. I could learn the basics of API implementations and other Java stuff that will be useful to me in the future."
+    }
+  }
+}
