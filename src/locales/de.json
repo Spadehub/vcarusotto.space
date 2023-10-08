@@ -1,4 +1,9 @@
 {
+  "hdm_logo_font_size": {
+    "line1": "1.32em",
+    "line2": "1.45em"
+  },
+
   "find_out": "erfahren Sie",
   "more": "mehr",
   "about": "über",
@@ -7,7 +12,7 @@
   "navbar": {
     "home": "Home",
     "about_me": "Über mich",
-    "my_works": "Meine Arbeit"
+    "my_works": "Projekte"
   },
 
   "homepage": {
@@ -45,12 +50,13 @@
     "contact": "Kontakt",
     "send_mail": "Email Senden",
     "my_story_label": "Meine Geschichte",
-    "story": "I was born in Italy in the year 1998 in a town called Canicattì in Sicily.\n        At the age of 8 my father bought our first Personal Computer, a Windows Machine.\n        It ran Windows XP at the time and I remember falling in love with it right away; there was so much to do.\n        As I aged and the technology evolved, I started seeing the potential that these machines had; so much that could be created.\n        At the age of 9 my parents, my aunt and I moved to Spain, Valencia for reasons related to work.\n        Away from my friends and family my child self had difficult time learning a new language and adapting to the new Environment.\n        But shortly after that, for the same reasons, my parents decided to move to Germany, where I currently live.\n        So I had to begin all over again: learn a new language, make new friends, adapting to new and much more different Environment.\n        In the meantime I also started learning English: mostly over my computer or over video-games.\n        I can count myself lucky to like languages and not having too much trouble learning new ones.\n        Even though, moving twice in such short time gave me hard times in my childhood, I can now surely say that I would not be the same Person now without those.\n        The experiences that I made, the cultural differences, the new languages that I learned; they all played a big role in making me a more open minded and mature person.\n        Why did I choose to become a developer? Surely not just because I liked the computer very much.\n        Even long before I wrote my first Hello World program, I felt that people that could do these things have the control over the devices that are like Plugins for our biological self.\n        May sound silly, but nowadays, without a smartphone in your pocket you can hardly do half the of the things that you do on your everyday basis.\n        So I wanted to have that kind of control and thus I started trying to do more and more stuff with my devices,\n        to the point that I could be considered the tech guy, that everyone calls when they need help with their devices.\n        Finally, after writing my first lines of code at school, I decided to study Computer Science."
+    "story": "Ich wurde 1998 in Italien geboren, in einer Stadt namens Canicattì in Sizilien. Im Alter von 8 Jahren kaufte mein Vater unseren ersten Personal Computer, einen Windows-Computer. Damals lief darauf Windows XP, und ich erinnere mich, dass ich mich sofort in den Computer verliebt habe; es gab so viele Möglichkeiten. Als ich älter wurde und sich die Technologie weiterentwickelte, begann ich das Potenzial dieser Maschinen zu erkennen; es gab so viel, was man damit machen konnte. Im Alter von 9 Jahren zogen meine Eltern, meine Tante und ich aus beruflichen Gründen nach Spanien, nach Valencia. Fernab von meinen Freunden und meiner Familie fiel es mir als Kind schwer, eine neue Sprache zu lernen und mich an die neue Umgebung anzupassen. Aber kurz darauf beschlossen meine Eltern aus denselben Gründen, nach Deutschland zu ziehen, wo ich jetzt lebe. Also musste ich wieder von vorne anfangen: eine neue Sprache lernen, neue Freunde finden, mich an eine neue und viel andersartige Umgebung anpassen. In der Zwischenzeit habe ich auch angefangen, Englisch zu lernen: meistens über meinen Computer oder über Videospiele. Ich kann mich glücklich schätzen, dass ich Sprachen mag und keine allzu großen Schwierigkeiten habe, neue zu lernen. Auch wenn mir die zwei Umzüge in so kurzer Zeit eine schwere Zeit in meiner Kindheit beschert haben, kann ich heute mit Sicherheit sagen, dass ich ohne diese Umzüge nicht die gleiche Person wäre wie heute. Die Erfahrungen, die ich gemacht habe, die kulturellen Unterschiede, die neuen Sprachen, die ich gelernt habe - sie alle haben eine große Rolle dabei gespielt, mich zu einem aufgeschlosseneren und reiferen Menschen zu machen. Warum habe ich mich für den Beruf des Entwicklers entschieden? Sicherlich nicht nur, weil ich den Computer sehr mochte. Schon lange bevor ich mein erstes \"Hello World\"-Programm schrieb, hatte ich das Gefühl, dass Menschen, die diese Dinge tun können, die Kontrolle über die Geräte haben, die wie Plugins für unser biologisches Selbst sind. Es mag albern klingen, aber heutzutage kann man ohne ein Smartphone in der Tasche kaum noch die Hälfte der Dinge tun, die man im Alltag tut. Also wollte ich diese Art von Kontrolle haben und begann, immer mehr Dinge mit meinen Geräten zu machen, bis zu dem Punkt, an dem man mich als den Techniker bezeichnen könnte, den alle anrufen, wenn sie Hilfe mit ihren Geräten brauchen. Nachdem ich in der Schule meine ersten Codezeilen geschrieben hatte, beschloss ich schließlich, Informatik zu studieren."
   },
   "works":{
     "fetching_repos": "Repositories Laden..."
   },
   "work": {
+    "fetching_repo": "Fetching Repository...",
     "project_id": "Projekt ID",
     "creation_date": "Erstellungsdatum",
     "visit_the": "Besuchen Sie die",

@@ -2,28 +2,35 @@
   <div class="switcher" :class="{'switcher-expanded' : isExpandable}" @mouseover="isExpandable = true">
     <div v-for="(language) of languages" :key="language">
       <img :src="language.flag" :alt="language.desc" @click="changeLanguage(language)"
-            :class="{'selected' : selectedLanguage === language} ">
+            :class="{'selected' : this.selectedLanguage === language} ">
     </div>
   </div>
 </template>
 
 <script>
+
+import i18n from "@/i18n";
+
 const languages = {
   ENGLISH: {
     desc: 'English',
+    locale: "en",
     flag: require('../../assets/eng-flag.png'),
     position: '0'
   },
   GERMAN: {
     desc: 'Deutsch',
+    locale: "de",
     flag: require('../../assets/deu-flag.jpg'),
     position: '-66px'
   },
+  /* TODO: Implement Italian
   ITALIAN: {
     desc: 'Italiano',
+    locale: "it",
     flag: require('../../assets/ita-flag.png'),
     position: '-132px'
-  }
+  }*/
 }
 export default {
   name: "LanguageSwitcher",
@@ -35,12 +42,24 @@ export default {
     }
   },
   methods:{
+    setPersistedLang(){
+      for (let lang in languages) {
+        if (languages[lang].locale === localStorage["locale"]) {
+          this.changeLanguage(languages[lang])
+        }
+      }
+    },
     changeLanguage(lang){
-      this.isExpandable = false
+      this.isExpandable = !this.isExpandable
       if (lang !== this.selectedLanguage){
         this.selectedLanguage = lang
+        i18n.global.locale.value = this.selectedLanguage.locale
+        localStorage["locale"] = this.selectedLanguage.locale
       }
     }
+  },
+  mounted() {
+    this.setPersistedLang()
   }
 }
 </script>
@@ -61,7 +80,7 @@ export default {
   transition: max-height .5s ease !important;
 }
 .switcher-expanded:hover{
-  max-height: 200px;
+  max-height: 183px;
   border-radius: 35px;
 }
 .switcher img {

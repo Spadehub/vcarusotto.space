@@ -30,6 +30,9 @@ html{
 html *:is(span), *:is(h1) {
     transition: color .8s;
 }
+body{
+    overflow-y: hidden;
+}
 .primaryAction {
     background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-hover-color) 50%, var(--primary-color) 100%);
     background-size: 200%;
@@ -76,6 +79,8 @@ html, body{
     padding-top: 130px;
     font-size: 1.9rem;
     font-family: Dosis, sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 a {
     text-decoration: none;

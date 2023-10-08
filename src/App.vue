@@ -27,6 +27,7 @@ export default defineComponent({
     }
   },
   mounted() {
+    //sets the user preferred theme used system-wide or from browser settings
     this.isDarkMode = this.hasDarkPreference();
     document.documentElement.setAttribute('dark-mode', this.isDarkMode.toString())
   },

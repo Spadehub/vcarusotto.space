@@ -198,7 +198,7 @@ export default {
   align-items: center;
   align-self: flex-end;
   transition: opacity 1s;
-  margin-bottom: auto;
+  margin-bottom: 50px;
 }
 #background-gradient{
   position: absolute;
@@ -287,7 +287,7 @@ export default {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
   .cards{
     flex-direction: row;
   }

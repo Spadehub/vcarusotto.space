@@ -1,7 +1,7 @@
 <template>
   <section class="main my-works">
     <div id="loading" v-if="works.length <= 0">
-      <span>Fetching Repositories...</span>
+      <span>{{ $t("works.fetching_repos") }}...</span>
       <LoadingAnim/>
     </div>
     <div v-else class="entry" v-for="work in works" :key="works.indexOf(work)">

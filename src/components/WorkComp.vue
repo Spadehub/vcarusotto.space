@@ -1,7 +1,7 @@
 <template>
   <section class="main">
     <div id="loading" v-if="!work.id">
-      <span>Fetching Project Repository...</span>
+      <span>{{ $t("work.fetching_repo") }}...</span>
       <LoadingAnim/>
     </div>
     <div v-else>

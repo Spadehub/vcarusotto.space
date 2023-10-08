@@ -25,11 +25,15 @@
           <span>{{ $t("about_me.student_at") }}</span>
           <a href="https://www.hdm-stuttgart.de" id="hdm" class="card">
             <div id="hdm-logo">
-              <img src="../assets/hdm-logo.png">
-              <img id="revealed" src="../assets/hdm-logo-revealed.png">
+              <img src="../assets/hdm-logo.png" alt="hdm logo">
+              <img id="revealed" src="../assets/hdm-logo-revealed.png" alt="hdm logo revealed">
             </div>
-            <span>{{ $t("about_me.hdm_line1") }}</span>
-            <span>{{ $t("about_me.hdm_line2") }}</span>
+            <span :style="{fontSize: $t('hdm_logo_font_size.line1')}">
+              {{ $t("about_me.hdm_line1") }}
+            </span>
+            <span :style="{fontSize: $t('hdm_logo_font_size.line2')}">
+              {{ $t("about_me.hdm_line2") }}
+            </span>
           </a>
         </div>
         <div class="card target-degree">
@@ -59,15 +63,15 @@
           <div class="entry">
             <span>{{ $t("about_me.mob_app_dev") }}</span>
             <div class="entry-images">
-              <img src="../assets/apple-logo.svg">
-              <img src="../assets/android-logo.png">
+              <img src="../assets/apple-logo.svg" alt="apple logo">
+              <img src="../assets/android-logo.png" alt="android logo">
             </div>
           </div>
           <div class="entry">
             <span>{{ $t("about_me.web_dev") }}</span>
             <div class="entry-images">
-              <img src="../assets/vue-logo.png">
-              <img src="../assets/django-logo.png">
+              <img src="../assets/vue-logo.png" alt="vue logo">
+              <img src="../assets/django-logo.png" alt="djang logo">
             </div>
           </div>
         </div>
@@ -86,13 +90,13 @@
           <span id="title">{{ $t("about_me.languages") }}</span>
           <div class="spoken-languages">
             <div class="entry">
-              <img src="../assets/ita-flag.png">
+              <img src="../assets/ita-flag.png" alt="italian flag">
             </div>
             <div class="entry">
-              <img src="../assets/deu-flag.jpg">
+              <img src="../assets/deu-flag.jpg" alt="german flag">
             </div>
             <div class="entry">
-              <img src="../assets/eng-flag.png">
+              <img src="../assets/eng-flag.png" alt="english flag">
             </div>
           </div>
           <br/>
@@ -239,10 +243,6 @@ export default {
 #hdm img{
   width: 300px;
 }
-#hdm span:nth-child(3){
-  font-size: 5.5rem;
-  line-height: 50px;
-}
 #hdm-logo{
   display: grid;
 }
@@ -259,8 +259,24 @@ export default {
 #hdm-logo img:nth-child(2), .hdm:hover img:not(#revealed), .hdm:hover img:is(#revealed){
   transition: opacity .3s;
 }
+#hdm span{
+  line-height: 0.85em;
+}
 .entry img{
   width: 3.5em;
+}
+.expertise > .entry > .entry-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+.expertise > .entry > .entry-images > img {
+  background-color: var(--secondary-hover-color-transparent);
+  width: 80px;
+  height: 80px;
+  border-radius: 25px;
+  padding: 10px
 }
 .projects > span:nth-child(2){
   font-size: 10em;
@@ -347,9 +363,6 @@ export default {
 .target-degree span:nth-child(6){
   font-size: 2em;
   font-weight: bold;
-}
-.my-story{
-
 }
 .edu {
   display: flex;
