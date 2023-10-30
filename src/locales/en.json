@@ -56,7 +56,7 @@
     "fetching_repos": "Fetching Repositories..."
   },
   "work": {
-    "fetching_repo": "Repository lädt...",
+    "fetching_repo": "Fetching Repository...",
     "project_id": "Project ID",
     "creation_date": "Creation Date",
     "visit_the": "visit the",

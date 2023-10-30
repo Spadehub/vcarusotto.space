@@ -1,3 +1,78 @@
 {
-  "message": "hello i18n !!"
+  "hdm_logo_font_size": {
+    "line1": "1em",
+    "line2": "1.5em"
+  },
+
+  "find_out": "scopri",
+  "more": "di più",
+  "about": "sui",
+  "my_works": "miei lavori",
+
+  "navbar": {
+    "home": "Pagina Iniziale",
+    "about_me": "Informazioni Personali",
+    "my_works": "I Miei Lavori"
+  },
+
+  "homepage": {
+    "he": "sa",
+    "llo": "lve",
+    "iam": ", io sono",
+    "software_developer": "Sviluppatore Software",
+    "discover": "Scopri",
+    "more_about": "di più",
+    "my_persona": "sulla mia persona",
+    "my_works": "sui miei lavori"
+  },
+  "about_me": {
+    "full_stack_dev": "Sviluppatore Full Stack",
+    "based_in": "Sede a",
+    "city": "Stoccarda",
+    "country": "Germania",
+    "personal_info": "Informazioni Personali",
+    "full_name": "Nome Completo",
+    "birth": "Nascita",
+    "birth_date_place": "19.03.1998 in Canicattì(AG), Italia",
+    "student_at": "Studente alla",
+    "hdm_line1": "STUTTGART MEDIA",
+    "hdm_line2": "UNIVERSITY",
+    "target_degree": "Laurea ambita",
+    "study_course": "Informatica Aziendale e Media Digitali",
+    "bachelor": "Laurea in Scienze",
+    "finished_approximately": "Fine Corso",
+    "edu_background": "Formazione Scolastica",
+    "expertise": "Competenze",
+    "mob_app_dev": "Sviluppo di App per Dispositivi Mobili",
+    "web_dev": "Sviluppo Web",
+    "projects": "Progetti",
+    "languages": "Lingue",
+    "contact": "Contatto",
+    "send_mail": "Invia Email",
+    "my_story_label": "La Mia Storia",
+    "story": "Sono nato in Italia nel 1998, in una città chiamata Canicattì in Sicilia. All'età di 8 anni, mio padre comprò il nostro primo computer, una macchina con sistema operativo Windows XP, e mi sono subito innamorato di essa. C'erano così tante cose da fare. Crescendo e vedendo l'evoluzione della tecnologia, ho iniziato a intravedere il potenziale di queste macchine e quanto si potesse creare con esse. All'età di 9 anni, i miei genitori, mia zia ed io ci siamo trasferiti in Spagna, a Valencia, per motivi di lavoro. Lontano dai miei amici e dalla famiglia, ho avuto difficoltà da bambino nell'imparare una nuova lingua e adattarmi al nuovo ambiente. Poco dopo, per gli stessi motivi, i miei genitori hanno deciso di trasferirsi in Germania, dove attualmente vivo. Ho dovuto ricominciare da capo: imparare una nuova lingua, fare nuovi amici e adattarmi a un ambiente molto diverso. Nel frattempo ho iniziato a imparare l'inglese, principalmente attraverso il computer e i videogiochi. Posso considerarmi fortunato ad amare le lingue e non avere troppi problemi nell'impararne di nuove. Anche se, a causa dei due trasferimenti in un periodo così breve, ho avuto momenti difficili da bambino, posso dire con certezza che non sarei la stessa persona oggi senza queste esperienze. Le esperienze che ho vissuto, le differenze culturali, le nuove lingue che ho imparato, hanno tutte avuto un ruolo importante nel rendermi una persona più aperta e matura. Perché ho scelto di diventare uno sviluppatore? Sicuramente non solo perché mi piaceva molto il computer. Già molto tempo prima di scrivere il mio primo programma \"Hello World\", ho sentito che le persone che potevano fare queste cose avevano il controllo sui dispositivi che sono come \"plugin\" per il nostro io biologico. Potrebbe sembrare sciocco, ma oggigiorno, senza uno smartphone in tasca, è difficile fare la metà delle cose che facciamo quotidianamente. Volevo avere quel tipo di controllo e ho iniziato a cercare di fare sempre più cose con i miei dispositivi, fino a diventare il \"ragazzo tecnologico\" a cui tutti chiamano quando hanno bisogno di aiuto con i loro dispositivi. Infine, dopo aver scritto le prime righe di codice a scuola, ho deciso di studiare Informatica."
+  },
+  "works":{
+    "fetching_repos": "Caricamento delle repositories..."
+  },
+  "work": {
+    "fetching_repo": "Caricamento della repository...",
+    "project_id": "ID Progetto",
+    "creation_date": "Data di Creazione",
+    "visit_the": "visita la",
+    "repository": "Repository",
+    "for_more": "per ulteriori informazioni",
+    "made_with": "Realizzato con",
+    "desc_label": "Descrizione",
+    "work_desc": {
+
+    },
+    "creators_comment_label": "Commento del Creatore",
+    "creators_comment": {
+      "flash": "Flash è il mio progetto più grande e recente (fino ad ora: 10.01.2023). Ho imparato molto di più da questo progetto rispetto a qualsiasi altro progetto fatto in precedenza. Abbiamo utilizzato Vue.js per il Front-End e Django per il Back-End. Mi sono concentrato principalmente sul Front-End e ho imparato come utilizzare i framework nel lavoro in generale e, naturalmente, in particolare Vue.js. Mi è piaciuto molto il framework, quindi ho deciso di costruire il mio sito web del portfolio con esso.",
+      "locawiki": "Questo è stato il mio primo tentativo di creare un'app mobile e la prima volta che ho lavorato con Android Studio. Non ho avuto molte difficoltà in quanto si basa sugli IDE di Jetbrains e avevo già lavorato con IntelliJ e WebStorm in precedenza. Non è niente di più di quello che Google è in grado di fare, ma funziona come previsto.",
+      "momhunt": "Ho avuto l'idea mentre ero al telefono con mia mamma. Questo è stato il mio primo approccio a Unity e ho potuto imparare le basi dell'ambiente di sviluppo Unity e del linguaggio di programmazione C Sharp. Ho scoperto anche che non mi diverto a sviluppare giochi tanto quanto mi diverto a fare lo stesso con app per dispositivi mobili e web. Tuttavia, mi è piaciuta l'idea e ora ho un gioco autoprodotto che posso giocare. :)",
+      "weather_forecast": "Questo è stato il mio primo progetto di sviluppo software realizzato all'università. Conoscevo già Java, quindi io e il mio partner abbiamo deciso di scegliere questo progetto poiché lo consideravamo il più difficile. Ho potuto imparare le basi dell'implementazione delle API e altre cose legate a Java che mi saranno utili in futuro."
+    }
+  }
 }

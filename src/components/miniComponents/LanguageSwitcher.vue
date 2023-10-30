@@ -22,15 +22,14 @@ const languages = {
     desc: 'Deutsch',
     locale: "de",
     flag: require('../../assets/deu-flag.jpg'),
-    position: '-66px'
+    position: '-67px'
   },
-  /* TODO: Implement Italian
   ITALIAN: {
     desc: 'Italiano',
     locale: "it",
     flag: require('../../assets/ita-flag.png'),
-    position: '-132px'
-  }*/
+    position: '-134px'
+  }
 }
 export default {
   name: "LanguageSwitcher",
