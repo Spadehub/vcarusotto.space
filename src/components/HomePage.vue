@@ -89,9 +89,9 @@ export default {
 }
 .terminal{
   position: absolute;
+  max-width: 90%;
 }
 .homepage{
-  height: inherit;
   width: 100%;
   display: flex;
   flex-direction: inherit;
@@ -214,6 +214,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  gap: 10px;
   align-items: center;
   width: 80%;
 }

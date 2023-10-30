@@ -132,6 +132,7 @@ export default {
 .right {
   text-align: left;
   flex-direction: row;
+  margin-left: auto;
 }
 .left {
   text-align: right;
