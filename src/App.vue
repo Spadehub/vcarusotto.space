@@ -49,7 +49,7 @@ export default defineComponent({
 
 #darkmode-toggle-floating{
   position: fixed;
-  bottom: env(safe-area-inset-bottom);
+  bottom: calc(env(safe-area-inset-bottom) + 5%);
   right: 5vw;
   height: 60px;
   width: 60px;
@@ -72,7 +72,7 @@ export default defineComponent({
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

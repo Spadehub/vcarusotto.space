@@ -220,7 +220,9 @@ export default {
 }
 .card{
   height: 150px;
+  font-size: 60%;
   padding: 0;
+  margin-bottom: 10px;
   position: relative;
   overflow: hidden;
   outline: 0.2rem solid transparent;

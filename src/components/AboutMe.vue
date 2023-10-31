@@ -137,7 +137,7 @@ export default {
   name: "AboutMe",
   data(){
     return{
-      projectsCount: MyWorksUtils.localProjectInfo.length,
+      projectsCount: MyWorksUtils.getLocalProjectInfo().length,
       eduBackground: [
         {
           id: "MHS",

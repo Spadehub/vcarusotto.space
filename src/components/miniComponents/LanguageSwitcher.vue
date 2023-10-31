@@ -22,13 +22,13 @@ const languages = {
     desc: 'Deutsch',
     locale: "de",
     flag: require('../../assets/deu-flag.jpg'),
-    position: '-67px'
+    position: '-66px'
   },
   ITALIAN: {
     desc: 'Italiano',
     locale: "it",
     flag: require('../../assets/ita-flag.png'),
-    position: '-134px'
+    position: '-132px'
   }
 }
 export default {

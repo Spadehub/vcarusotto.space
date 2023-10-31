@@ -10,9 +10,9 @@
   "my_works": "miei lavori",
 
   "navbar": {
-    "home": "Pagina Iniziale",
-    "about_me": "Informazioni Personali",
-    "my_works": "I Miei Lavori"
+    "home": "Homepage",
+    "about_me": "Su di me",
+    "my_works": "Lavori"
   },
 
   "homepage": {
